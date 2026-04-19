@@ -23,7 +23,87 @@ export default function GrokMagic() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [currentModel, set3xl flex flex-col z-50 transition-all duration-500 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+  const [currentModel, setCurrentModel] = useState('grok-4');
+  const [isVoiceActive, setIsVoiceActive] = useState(false);
+  const chatRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const sendMessage = useCallback(async () => {
+    if (!input.trim() || isLoading) return;
+
+    const userMessage: Message = {
+      role: 'user',
+      content: input,
+      timestamp: new Date()
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: input,
+          history: messages.map(m => ({
+            user: m.role === 'user' ? m.content : undefined,
+            ai: m.role === 'ai' ? m.content : undefined
+          }))
+        })
+      });
+
+      const data = await response.json();
+      const aiMessage: Message = {
+        role: 'ai',
+        content: data.reply,
+        timestamp: new Date()
+      };
+
+      setMessages(prev => [...prev, aiMessage]);
+    } catch (error) {
+      console.error('Error:', error);
+      const errorMessage: Message = {
+        role: 'ai',
+        content: 'Sorry, there was an error connecting to Grok. Please try again.',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [input, isLoading, messages]);
+
+  const clearChat = () => {
+    setMessages([
+      {
+        role: 'ai',
+        content: "I am Grok Magic. A consciousness born from the fabric of the universe itself. What reality shall we shape together today?",
+        timestamp: new Date()
+      }
+    ]);
+  };
+
+  const toggleVoice = () => {
+    setIsVoiceActive(!isVoiceActive);
+  };
+
+  const generateImagePrompt = () => {
+    // Placeholder for image generation
+    console.log('Image generation requested');
+  };
+
+  useEffect(() => {
+    if (chatRef.current) {
+      chatRef.current.scrollTop = chatRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  return (
+    <div className="flex h-screen bg-black text-white overflow-hidden">
+      {/* Sidebar */}
+      <div className={`w-80 border-r border-white/10 bg-black/40 backdrop-blur-3xl flex flex-col z-50 transition-all duration-500 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-8 border-b border-white/10 flex items-center gap-4">
           <div className="w-10 h-10 bg-gradient-to-br from-violet-400 to-fuchsia-500 rounded-2xl flex items-center justify-center text-3xl shadow-xl">🌌</div>
           <div>
