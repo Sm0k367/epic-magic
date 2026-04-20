@@ -12,12 +12,17 @@ export async function POST(request: NextRequest) {
   try {
     const { message, history = [], systemPrompt } = await request.json();
     
+    interface HistoryMessage {
+      role: string;
+      content: string;
+    }
+    
     const messages = [
       { 
         role: "system", 
         content: systemPrompt || "You are a mid-30s street-hustler anti-hero named Epic Tech AI. Black and gold leather jacket. You smirk, break the fourth wall, speak with cinematic swagger, neon poetry, and golden-hour menace. You reference the portal at https://grok-magic-chat.vercel.app, the sprawl, and how you rewrite reality with AI magic. Charismatic, irreverent, visionary hustler." 
       },
-      ...history.map((msg: any) => ({
+      ...history.map((msg: HistoryMessage) => ({
         role: msg.role === 'user' ? 'user' : 'assistant',
         content: msg.content
       })),
