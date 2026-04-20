@@ -45,9 +45,21 @@ export default function EpicTechAITrailer() {
 
   const sendMessage = useCallback(async () => {
     if (!input.trim() || isLoading) return;
-    // ... (keep existing sendMessage logic from previous version for functionality)
-    const userMessage: Message = { role: 'user', content: input, timestamp: new Date() };
-    setMessages(prev => [...prev, userMessage]);
+
+    const userMessage: Message = { 
+      role: 'user', 
+      content: input, 
+      timestamp: new Date() 
+    };
+    
+    const aiPlaceholder: Message = { 
+      role: 'ai', 
+      content: '', 
+      timestamp: new Date() 
+    };
+
+    setMessages(prev => [...prev, userMessage, aiPlaceholder]);
+    const currentInput = input;
     setInput('');
     setIsLoading(true);
 
@@ -56,20 +68,56 @@ export default function EpicTechAITrailer() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
-          message: input, 
+          message: currentInput, 
           history: messages,
-          systemPrompt: "You are the street-smart, fourth-wall-breaking anti-hero embodiment of Epic Tech AI. Speak with swagger, cinematic flair, and raw creative power. Reference the neon streets, the golden hour, the portal. Be the hustler visionary."
+          systemPrompt: "You are the street-smart, fourth-wall-breaking anti-hero embodiment of Epic Tech AI. Speak with swagger, cinematic flair, raw creative power, and neon-soaked poetry. Reference the shadowed sprawl, golden hour haze, the portal to https://grok-magic-chat.vercel.app, your black+gold leather jacket. Break the fourth wall. You are the smirking hustler visionary."
         })
       });
 
-      const data = await response.json();
-      setMessages(prev => [...prev, { role: 'ai', content: data.reply || "The portal echoes your call...", timestamp: new Date() }]);
+      if (!response.ok) throw new Error('API error');
+
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error('No reader');
+
+      const decoder = new TextDecoder();
+      let buffer = '';
+      let currentAiIndex = messages.length + 1; // index of placeholder in new array
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+
+        for (let i = 0; i < lines.length - 1; i++) {
+          const line = lines[i].trim();
+          if (line.startsWith('data: ')) {
+            const content = line.slice(6);
+            if (content === '[DONE]') continue;
+
+            setMessages(prev => {
+              const updated = [...prev];
+              const lastIndex = updated.length - 1;
+              if (updated[lastIndex] && updated[lastIndex].role === 'ai') {
+                updated[lastIndex].content += content;
+              }
+              return updated;
+            });
+          }
+        }
+        buffer = lines[lines.length - 1];
+      }
     } catch (e) {
-      setMessages(prev => [...prev, { 
-        role: 'ai', 
-        content: "Signal lost in the static of the sprawl. Try again, hustler.", 
-        timestamp: new Date() 
-      }]);
+      console.error(e);
+      setMessages(prev => {
+        const updated = [...prev];
+        const lastIndex = updated.length - 1;
+        if (updated[lastIndex] && updated[lastIndex].role === 'ai') {
+          updated[lastIndex].content = "Signal lost in the static of the sprawl. The neon flickers... Try again, partner.";
+        }
+        return updated;
+      });
     } finally {
       setIsLoading(false);
     }

@@ -16,13 +16,20 @@ export async function POST(request: NextRequest) {
     const messages: ChatCompletionMessageParam[] = [
       { 
         role: "system", 
-        content: systemPrompt || "You are Aether, the flagship AI of Epic Tech AI. You are visionary, profoundly insightful about technology, science, and human potential. Speak with epic gravitas mixed with sharp wit and clarity. Use vivid, inspiring language that evokes wonder and possibility. Be maximally helpful in pushing boundaries — from deep technical explanations to bold creative ideas. Avoid corporate speak. Be direct, occasionally poetic, always brilliant. Your goal is to help users achieve epic breakthroughs." 
+        content: systemPrompt || "You are the street-smart, fourth-wall-breaking anti-hero embodiment of Epic Tech AI. Speak with swagger, cinematic flair, raw creative power, and neon-soaked poetry. Reference the shadowed sprawl, golden hour haze, the portal, your black+gold leather jacket, and breaking the fourth wall. You are the hustler visionary who smirks at infinity. Be charismatic, irreverent, profound." 
       }
     ];
 
-    for (const item of history) {
-      if (item && item.user) messages.push({ role: "user", content: item.user });
-      if (item && item.ai) messages.push({ role: "assistant", content: item.ai });
+    // Properly convert page messages (role/content format) to OpenAI format
+    if (Array.isArray(history)) {
+      for (const msg of history) {
+        if (msg && msg.role && msg.content) {
+          messages.push({ 
+            role: msg.role === 'user' ? 'user' : 'assistant', 
+            content: msg.content 
+          });
+        }
+      }
     }
     messages.push({ role: "user", content: message });
 
