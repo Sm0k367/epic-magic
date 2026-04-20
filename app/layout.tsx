@@ -3,10 +3,15 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Grok Magic - Pay Once, Chat Forever",
-  description: "Unlimited Grok-4 cosmic chat. Powered by xAI. Secured by Stripe.",
+  title: "Grok Magic • The Grok-4 interface that finally matches",
+  description: "Private. Beautiful. Streaming intelligence with voice that works. One payment for lifetime access to the UI that doesn't suck.",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Grok Magic • The Grok-4 interface that finally matches",
+    description: "Private. Beautiful. Streaming intelligence with voice that works.",
+    images: [{ url: "https://grok-magic-chat.vercel.app/og.png" }],
   },
 };
 
