@@ -13,11 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Grok-Magic-Chat | Epic Tech AI • Cinematic Portal",
-  description: "An immersive cyberpunk cinematic trailer. Golden hour fly-through. One anti-hero in black + gold. The portal to https://grok-magic-chat.vercel.app is open. Grok-Magic-Chat: AI-Powered Magic & Creativity Unleashed.",
-  icons: {
-    icon: "/favicon.ico",
-  },
+  title: "Epic Magic • Cinematic Portal",
+  description: "Grok-Magic-Chat: AI-Powered Magic & Creativity Unleashed. An immersive cyberpunk cinematic trailer featuring the anti-hero of the neon sprawl.",
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({

@@ -1,0 +1,688 @@
+[startup] Preparing Kortix sandbox...
+[startup] Fixing workspace ownership...
+[startup] Preserving OpenCode sqlite WAL/SHM files for crash recovery
+[startup] Starting s6-overlay...
+[startup] Daytona wrapper detected - starting direct runtime without s6
+[init] Setting up SSH daemon...
+[init] SSH ready.
+[fix-bun-pty] ── bun-pty health check ──
+[fix-bun-pty] Bun runtime: v1.3.12 (/opt/bun/bin/bun)
+[fix-bun-pty] bun-pty installed: v0.4.8
+[fix-bun-pty] All bun-pty .so files already patched.
+[fix-bun-pty] Set BUN_PTY_LIB=/opt/bun-pty-musl/librust_pty.so in s6 container environment.
+[fix-bun-pty] Running bun-pty smoke test...
+[fix-bun-pty] Smoke test: OK: bun-pty exports: Terminal, spawn
+OK: spawn function available
+OK: Terminal class available
+[fix-bun-pty] ── health check complete ──
+[Kortix] Restoring core env vars from bootstrap file...
+[Kortix] Syncing secrets into s6 container environment...
+[Bootstrap] Restored 1 core env var(s) from /workspace/.secrets/.bootstrap-env.json
+[sync-s6-env] Wrote 5 env var(s) to /run/s6/container_environment
+[Kortix] Secrets recovery complete
+[Kortix] NODE_OPTIONS ECONNRESET guard enabled
+[Kortix] Environment setup complete
+[restore-packages] Checking for packages to restore...
+[restore-packages] npm: 1 global package(s) found in /workspace/.npm-global/ (persisted via volume)
+[restore-packages] No packages to restore.
+[fix-ownership] Fixing all abc-owned dirs (UID=911 GID=1001)...
+[fix-ownership] Done.
+[startup] Starting X display (svc-xorg)...
+[startup] Waiting for X display :1...
+[startup] X display :1 is ready (1s)
+[startup] X RANDR screen is ready (0s)
+[startup] Preparing Selkies config...
+[startup] Preparing nginx config...
+[startup] WARNING: svc-de/run not found — desktop environment will not be available
+[startup] Starting pulseaudio (svc-pulseaudio)...
+[startup] WARNING: Pulseaudio did not become ready after 15s
+[startup] Starting desktop environment (svc-de)...
+[startup] Starting Selkies desktop stream (svc-selkies)...
+[startup] Starting desktop nginx (svc-nginx)...
+[startup] Starting persistent Chromium (svc-chromium-persistent)...
+[Bootstrap] Restored 1 core env var(s) from /workspace/.secrets/.bootstrap-env.json
+[SecretStore] Loaded 18 env var(s)
+[auth-sync] Watching auth.json
+[Kortix Master] Starting on port 8000
+[Kortix Master] Proxying to OpenCode at localhost:4096
+[Kortix Master] API docs available at http://localhost:8000/docs
+Started development server: http://localhost:8000
+<-- GET /agent
+<-- GET /experimental/tool/ids
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+<-- GET /mcp
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo
+[Kortix Master] OpenCode unreachable on GET /agent: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /experimental/tool/ids: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /mcp: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /skill
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo
+[Kortix Master] OpenCode unreachable on GET /skill: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /global/health
+[Kortix Master] OpenCode unreachable on GET /global/health: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+[Kortix Master] OpenCode unreachable on GET /session/ses_28659e03bffe5fU1WoD1Go7atH: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_2578d2551ffekxMfdXsIrmz9bT: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+[Kortix Master] OpenCode unreachable on GET /session/ses_2576ab116ffex9YiCnSC76bpWX: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+[Kortix Master] OpenCode unreachable on GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_27bf47a7effe4tgc7JT2bVclx5: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /global/health
+<-- POST /log
+[Kortix Master] OpenCode unreachable on POST /log: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- POST /log
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo
+<-- GET /command
+[Kortix Master] OpenCode unreachable on GET /command: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /agent
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+[Kortix Master] OpenCode unreachable on GET /session/ses_26bff6906ffeIwgC6QERm83tVi: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo
+[Kortix Master] OpenCode unreachable on GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /skill
+<-- GET /provider
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo
+<-- GET /experimental/tool/ids
+[Kortix Master] OpenCode unreachable on GET /provider: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+[Kortix Master] OpenCode unreachable on GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo
+<-- GET /global/event
+[Kortix Master] OpenCode unreachable on GET /global/event: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- POST /log
+<-- GET /session/status
+[Kortix Master] OpenCode unreachable on GET /session/status: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /mcp
+<-- GET /command
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- GET /agent
+[Kortix Master] OpenCode unreachable on GET /session/ses_25849645bffenoMKyeQ8rwv1ui: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo
+<-- GET /path
+[Kortix Master] OpenCode unreachable on GET /path: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+<-- GET /provider
+<-- GET /session?limit=10000
+[Kortix Master] OpenCode unreachable on GET /session: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /experimental/tool/ids
+<-- GET /session/status
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo
+<-- GET /global/event
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+<-- GET /skill
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo
+<-- GET /global/health
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+<-- GET /global/event
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo
+<-- GET /skill
+<-- GET /experimental/tool/ids
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo
+<-- GET /config
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo
+<-- GET /session?limit=10000
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+<-- GET /global/health
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+<-- GET /agent
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo
+<-- GET /command
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+<-- GET /mcp
+<-- GET /provider
+[Kortix Master] OpenCode unreachable on GET /config: Unable to connect. Is the computer able to access the url? — is OpenCode running on localhost:4096?
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /global/health
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /global/health
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /session/status
+<-- GET /global/health
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+<-- GET /global/health
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- POST /log
+--> POST /log [32m200[0m 3s
+--> POST /log [32m200[0m 3s
+--> GET /global/health [32m200[0m 3s
+--> GET /global/health [32m200[0m 3s
+--> GET /global/health [32m200[0m 718ms
+--> GET /global/health [32m200[0m 740ms
+--> GET /global/health [32m200[0m 809ms
+--> GET /global/health [32m200[0m 842ms
+--> GET /global/event [32m200[0m 1s
+--> GET /global/health [32m200[0m 2s
+--> GET /global/event [32m200[0m 2s
+--> POST /log [32m200[0m 2s
+--> GET /global/event [32m200[0m 2s
+--> POST /log [32m200[0m 185ms
+--> GET /global/health [32m200[0m 595ms
+[Pipedream] No local creds to push to API
+--> GET /session/status [32m200[0m 1s
+--> GET /session/status [32m200[0m 2s
+--> GET /path [32m200[0m 2s
+--> GET /session/status [32m200[0m 3s
+--> GET /config [32m200[0m 1s
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 3s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 3s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 4s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 4s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 4s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 4s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 4s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo [32m200[0m 5s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo [32m200[0m 5s
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 5s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo [32m200[0m 5s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo [32m200[0m 5s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo [32m200[0m 5s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo [32m200[0m 5s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 1s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 1s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 1s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 1s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 1s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 1s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 1s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 1s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 1s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 1s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 1s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo [32m200[0m 1s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 1s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 1s
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo [32m200[0m 1s
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 1s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo [32m200[0m 1s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo [32m200[0m 1s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 1s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo [32m200[0m 1s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo [32m200[0m 1s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo [32m200[0m 1s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo [32m200[0m 1s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 2s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 2s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 2s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 2s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 2s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 2s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo [32m200[0m 2s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo [32m200[0m 2s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo [32m200[0m 2s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 2s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 2s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 2s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo [32m200[0m 2s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo [32m200[0m 2s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 2s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 2s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo [32m200[0m 2s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 2s
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo [32m200[0m 2s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo [32m200[0m 2s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 2s
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 2s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo [32m200[0m 3s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo [32m200[0m 3s
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo [32m200[0m 3s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 3s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo [32m200[0m 3s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 3s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo [32m200[0m 3s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo [32m200[0m 3s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo [32m200[0m 3s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo [32m200[0m 3s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 1s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 1s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 1s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 1s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 1s
+--> GET /session?limit=10000 [32m200[0m 2s
+--> GET /session?limit=10000 [32m200[0m 2s
+--> GET /experimental/tool/ids [32m200[0m 5s
+--> GET /experimental/tool/ids [32m200[0m 2s
+--> GET /experimental/tool/ids [32m200[0m 2s
+--> GET /experimental/tool/ids [32m200[0m 3s
+--> GET /provider [32m200[0m 2s
+--> GET /provider [32m200[0m 3s
+--> GET /provider [32m200[0m 4s
+<-- GET /global/event
+--> GET /agent [32m200[0m 6s
+--> GET /agent [32m200[0m 2s
+--> GET /agent [32m200[0m 3s
+--> GET /agent [32m200[0m 4s
+--> GET /skill [32m200[0m 6s
+--> GET /skill [32m200[0m 2s
+--> GET /skill [32m200[0m 3s
+--> GET /skill [32m200[0m 4s
+--> GET /global/event [32m200[0m 4ms
+--> GET /mcp [32m200[0m 6s
+--> GET /mcp [32m200[0m 2s
+--> GET /mcp [32m200[0m 3s
+--> GET /command [32m200[0m 3s
+--> GET /command [32m200[0m 3s
+--> GET /command [32m200[0m 4s
+<-- POST /log
+--> POST /log [32m200[0m 3ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 0ms
+<-- GET /config
+<-- GET /global/health
+--> GET /config [32m200[0m 3ms
+--> GET /global/health [32m200[0m 2ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 2ms
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/message
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui/message
+<-- GET /global/health
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui/message
+<-- GET /global/health
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/message
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/message
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/message [32m200[0m 128ms
+<-- POST /log
+<-- GET /env/ONBOARDING_COMPLETE
+--> GET /env/ONBOARDING_COMPLETE [32m200[0m 290ms
+--> GET /global/health [32m200[0m 502ms
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /global/health
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+<-- GET /global/health
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /global/health
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+--> GET /global/health [32m200[0m 916ms
+<-- GET /project/current
+<-- GET /file?path=%2Fworkspace%2Fpixeltale
+<-- GET /kortix/ports
+--> GET /kortix/ports [32m200[0m 0ms
+--> GET /file?path=%2Fworkspace%2Fpixeltale [32m200[0m 78ms
+<-- GET /kortix/health
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2FCONTRIBUTING.md
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2FREADME.md
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2FCONTRIBUTING.md [32m200[0m 3ms
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2FREADME.md [32m200[0m 1ms
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2Fpackage-lock.json
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2Fpackage-lock.json [32m200[0m 1ms
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2FCHANGELOG.md
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2FCHANGELOG.md [32m200[0m 1ms
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2Fpackage.json
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2Ftsconfig.json
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2Fpackage.json [32m200[0m 0ms
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2Ftsconfig.json [32m200[0m 1ms
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2FLICENSE
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2Ftailwind.config.js
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2FLICENSE [32m200[0m 1ms
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2Ftailwind.config.js [32m200[0m 0ms
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2Fpostcss.config.js
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2Fpostcss.config.js [32m200[0m 0ms
+<-- GET /file/content?path=%2Fworkspace%2Fpixeltale%2Fvite.config.ts
+--> GET /file/content?path=%2Fworkspace%2Fpixeltale%2Fvite.config.ts [32m200[0m 0ms
+<-- GET /global/health
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 3s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 3s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 3s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 3s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 3s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 3s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 3s
+--> GET /project/current [32m200[0m 2s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/message [32m200[0m 4s
+--> POST /log [32m200[0m 3s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 3s
+--> GET /global/health [32m200[0m 3s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 3s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 3s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 3s
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 3s
+--> GET /global/health [32m200[0m 3s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 3s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 3s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 3s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 3s
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 3s
+--> GET /global/health [32m200[0m 3s
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 3s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 3s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 3s
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 3s
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 3s
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 3s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 3s
+[Kortix Master] OpenCode is ready
+--> GET /kortix/health [32m200[0m 2s
+--> GET /global/health [32m200[0m 2s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 1s
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 937ms
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui/message [32m200[0m 4s
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui/message [32m200[0m 4s
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/message [32m200[0m 4s
+<-- GET /file/status
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /config
+<-- GET /provider
+<-- GET /experimental/tool/ids
+<-- GET /command
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 6ms
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo [32m200[0m 5ms
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 4ms
+<-- GET /session/status
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo
+--> GET /config [32m200[0m 4ms
+<-- GET /skill
+<-- GET /path
+<-- GET /global/event
+<-- GET /session?limit=10000
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+<-- GET /mcp
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo
+<-- GET /agent
+--> GET /file/status [32m200[0m 347ms
+--> GET /provider [32m200[0m 224ms
+--> GET /experimental/tool/ids [32m200[0m 226ms
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 224ms
+--> GET /session/status [32m200[0m 224ms
+--> GET /skill [32m200[0m 224ms
+--> GET /command [32m200[0m 226ms
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo [32m200[0m 226ms
+--> GET /path [32m200[0m 224ms
+--> GET /global/event [32m200[0m 223ms
+--> GET /session?limit=10000 [32m200[0m 223ms
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 223ms
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 222ms
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 221ms
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo [32m200[0m 221ms
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo [32m200[0m 220ms
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo [32m200[0m 208ms
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo [32m200[0m 207ms
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 208ms
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo [32m200[0m 205ms
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 203ms
+--> GET /mcp [32m200[0m 137ms
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo [32m200[0m 137ms
+--> GET /agent [32m200[0m 137ms
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /global/health
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 3ms
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 3ms
+--> GET /global/health [32m200[0m 3ms
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 2ms
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 1ms
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 0ms
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 2ms
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 4ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- POST /log
+--> POST /log [32m200[0m 2ms
+<-- GET /mcp
+--> GET /mcp [32m200[0m 2ms
+<-- GET /config
+<-- GET /provider
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo
+<-- GET /session?limit=10000
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo
+--> GET /config [32m200[0m 4ms
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX
+<-- GET /global/health
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+<-- GET /global/health
+<-- GET /experimental/tool/ids
+<-- GET /skill
+--> GET /provider [32m200[0m 89ms
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3/todo [32m200[0m 90ms
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 90ms
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi/todo [32m200[0m 89ms
+--> GET /session?limit=10000 [32m200[0m 89ms
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT/todo [32m200[0m 87ms
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX [32m200[0m 87ms
+--> GET /global/health [32m200[0m 87ms
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5/todo [32m200[0m 87ms
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 87ms
+--> GET /global/health [32m200[0m 87ms
+--> GET /experimental/tool/ids [32m200[0m 86ms
+--> GET /skill [32m200[0m 85ms
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- POST /log
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 4ms
+--> POST /log [32m200[0m 4ms
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 1ms
+<-- GET /config
+<-- GET /global/health
+--> GET /config [32m200[0m 1ms
+--> GET /global/health [32m200[0m 1ms
+<-- GET /session/status
+--> GET /session/status [32m200[0m 0ms
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- GET /global/event
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+<-- GET /command
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 2ms
+--> GET /global/event [32m200[0m 2ms
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo
+<-- GET /agent
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 2ms
+<-- GET /session?limit=10000
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo
+<-- GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+<-- GET /mcp
+--> GET /command [32m200[0m 8ms
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH/todo [32m200[0m 8ms
+--> GET /agent [32m200[0m 8ms
+--> GET /session?limit=10000 [32m200[0m 8ms
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 9ms
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui/todo [32m200[0m 10ms
+--> GET /session/ses_2576ab116ffex9YiCnSC76bpWX/todo [32m200[0m 9ms
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg/todo [32m200[0m 9ms
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 9ms
+--> GET /mcp [32m200[0m 8ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 4ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /global/health
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+--> GET /global/health [32m200[0m 1ms
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 1ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /kortix/health
+--> GET /kortix/health [32m200[0m 4ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /kortix/health
+--> GET /kortix/health [32m200[0m 4ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 1ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 1ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 2ms
+<-- GET /kortix/health
+--> GET /kortix/health [32m200[0m 4ms
+<-- GET /session/ses_27bf47a7effe4tgc7JT2bVclx5
+<-- GET /session/ses_28659e03bffe5fU1WoD1Go7atH
+<-- GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg
+<-- GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3
+<-- GET /session/ses_26bff6906ffeIwgC6QERm83tVi
+--> GET /session/ses_27bf47a7effe4tgc7JT2bVclx5 [32m200[0m 2ms
+<-- GET /session/ses_25849645bffenoMKyeQ8rwv1ui
+<-- GET /session/ses_2578d2551ffekxMfdXsIrmz9bT
+--> GET /session/ses_28659e03bffe5fU1WoD1Go7atH [32m200[0m 5ms
+--> GET /session/ses_25dea3f4bffeOeHNZa94E6oqLg [32m200[0m 4ms
+--> GET /session/ses_26c3a4ca3ffe7jlaTAJQZoqZH3 [32m200[0m 4ms
+--> GET /session/ses_26bff6906ffeIwgC6QERm83tVi [32m200[0m 4ms
+--> GET /session/ses_25849645bffenoMKyeQ8rwv1ui [32m200[0m 3ms
+--> GET /session/ses_2578d2551ffekxMfdXsIrmz9bT [32m200[0m 2ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- POST /session/ses_2576ab116ffex9YiCnSC76bpWX/prompt_async
+--> POST /session/ses_2576ab116ffex9YiCnSC76bpWX/prompt_async [32m204[0m 140ms
+<-- GET /session/status
+--> GET /session/status [32m200[0m 2ms
+<-- GET /session/status
+--> GET /session/status [32m200[0m 2ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 375ms
+<-- GET /kortix/health
+--> GET /kortix/health [32m200[0m 10ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 3ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /kortix/health
+--> GET /kortix/health [32m200[0m 5ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 1ms
+<-- GET /kortix/health
+--> GET /kortix/health [32m200[0m 4ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 2ms
+<-- GET /kortix/projects
+--> GET /kortix/projects [32m200[0m 3ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 2ms
+<-- GET /kortix/health
+--> GET /kortix/health [32m200[0m 4ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 4ms
+<-- POST /session/ses_2576ab116ffex9YiCnSC76bpWX/prompt_async
+--> POST /session/ses_2576ab116ffex9YiCnSC76bpWX/prompt_async [32m204[0m 83ms
+<-- GET /global/event
+--> GET /global/event [32m200[0m 11ms
+<-- GET /global/health
+--> GET /global/health [32m200[0m 31ms
+<-- GET /kortix/health
+--> GET /kortix/health [32m200[0m 3ms
+<-- GET /session/status
+--> GET /session/status [32m200[0m 2ms
+<-- GET /session/status
+--> GET /session/status [32m200[0m 32ms

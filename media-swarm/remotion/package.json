@@ -1,0 +1,23 @@
+{
+  "name": "floorburner-visualizer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "render": "remotion render FloorburnerVisualizer out/video.mp4"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@remotion/cli": "^4.0.2",
+    "@remotion/google-fonts": "^4.0.2",
+    "@remotion/player": "^4.0.2",
+    "remotion": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0",
+    "typescript": "5.0.0"
+  }
+}

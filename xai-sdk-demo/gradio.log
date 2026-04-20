@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/xai-sdk-demo/grok_magic_web.py", line 8, in <module>
+    import replicate
+ModuleNotFoundError: No module named 'replicate'
