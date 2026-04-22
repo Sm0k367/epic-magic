@@ -9,6 +9,21 @@ interface Message {
   content: string;
 }
 
+const links = [
+  { title: "EPIC TECH AI LOUNGE", url: "https://epic-tech-ai-lounge.vercel.app", category: "CORE HUB", emoji: "🌌" },
+  { title: "AFTER DARK V", url: "https://after-dark-five.vercel.app", category: "CORE HUB", emoji: "🌃" },
+  { title: "EPIC TECH .AI", url: "https://epictech.ai", category: "CORE HUB", emoji: "🚀" },
+  { title: "DJ SMOKE STREAM", url: "https://suno.com/@dj_smoke_stream", category: "MUSIC VAULT", emoji: "🎵" },
+  { title: "MUSIC VAULT ETA", url: "https://music-vault-eta.vercel.app", category: "MUSIC VAULT", emoji: "📼" },
+  { title: "EPIC AI BOT", url: "https://epic-ai-bot.vercel.app", category: "AI AGENTS", emoji: "🤖" },
+  { title: "100+ REPOS", url: "https://github.com/Sm0k367", category: "FULL REPOS", emoji: "🐙" },
+  { title: "@Sm0ken42O", url: "https://x.com/Sm0ken42O", category: "THE ANTI-HERO", emoji: "𝕏" },
+  { title: "@EPIC TECH AI", url: "https://youtube.com/@epictech-ai", category: "VIDEO VAULT", emoji: "📺" },
+  { title: "@EpicTechAI", url: "https://websim.com/@EpicTechAI", category: "WEBSIM", emoji: "🌐" },
+  { title: "SM0KEN42O SHOWCASE", url: "https://beta.pixio.myapps.ai/showcase/creator/sm0ken42o", category: "PIXIO", emoji: "🖼️" },
+  { title: "SM0K367.GITHUB.IO", url: "https://sm0k367.github.io", category: "INTERACTIVE DEMOS", emoji: "🌐" },
+];
+
 export default function EpicMagicCinematic() {
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [portalOpen, setPortalOpen] = useState(false);
@@ -49,10 +64,6 @@ export default function EpicMagicCinematic() {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') sendMessage();
   };
 
   return (
@@ -129,10 +140,10 @@ export default function EpicMagicCinematic() {
           </motion.button>
 
           <motion.button
-            whileHover={{ scale: 1.05, rotate: 2 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => setAntiHeroOpen(true)}
-            className="group flex items-center gap-4 bg-gradient-to-r from-amber-400 to-yellow-400 text-black px-12 py-6 rounded-3xl text-lg font-bold tracking-tighter transition-all shadow-2xl shadow-amber-500/50 hover:shadow-amber-400 hover:scale-110 active:scale-95 neon-text"
+            className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/30 hover:border-white px-12 py-6 rounded-3xl text-lg font-medium transition-all backdrop-blur-xl neon-text"
           >
             MEET THE ANTI-HERO
             <User className="w-5 h-5" />
@@ -145,19 +156,11 @@ export default function EpicMagicCinematic() {
         {trailerOpen && (
           <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={() => setTrailerOpen(false)}>
             <div className="relative max-w-5xl w-full" onClick={e => e.stopPropagation()}>
-              <button 
-                onClick={() => setTrailerOpen(false)}
-                className="absolute -top-12 right-0 text-white/70 hover:text-white flex items-center gap-2 text-sm"
-              >
+              <button onClick={() => setTrailerOpen(false)} className="absolute -top-12 right-0 text-white/70 hover:text-white flex items-center gap-2 text-sm">
                 CLOSE <X size={18} />
               </button>
               <div className="aspect-video bg-black rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
-                <video 
-                  controls 
-                  autoPlay
-                  className="w-full h-full"
-                  src="/image.mp4"
-                >
+                <video controls autoPlay className="w-full h-full" src="/image.mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -205,7 +208,7 @@ export default function EpicMagicCinematic() {
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={handleKeyDown}
+                    onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
                     placeholder="Break the fourth wall... what do you want to create?"
                     className="flex-1 bg-zinc-900 border border-white/20 focus:border-amber-400 rounded-2xl px-6 py-4 text-white placeholder:text-white/40 outline-none"
                   />
@@ -223,15 +226,18 @@ export default function EpicMagicCinematic() {
         )}
       </AnimatePresence>
 
-      {/* Anti-Hero Carousel Modal */}
+      {/* Anti-Hero Archive Modal */}
       <AnimatePresence>
         {antiHeroOpen && (
-          <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={() => setAntiHeroOpen(false)}>
-            <div className="relative max-w-6xl w-full max-h-[90vh] overflow-auto bg-zinc-950 border border-amber-400/50 rounded-3xl" onClick={e => e.stopPropagation()}>
-              <div className="sticky top-0 bg-black/90 border-b border-amber-400/30 p-6 flex items-center justify-between z-10">
-                <div>
+          <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-6" onClick={() => setAntiHeroOpen(false)}>
+            <div className="relative max-w-6xl w-full max-h-[90vh] bg-zinc-950 border border-amber-400/50 rounded-3xl overflow-hidden" onClick={e => e.stopPropagation()}>
+              <div className="sticky top-0 bg-black p-6 border-b border-amber-400/30 flex items-center justify-between z-10">
+                <div className="flex items-center gap-4">
                   <div className="text-5xl">😏</div>
-                  <h2 className="text-4xl font-black tracking-tighter neon-text">THE ANTI-HERO ARCHIVE</h2>
+                  <div>
+                    <h2 className="text-4xl font-black tracking-tighter neon-text">THE ANTI-HERO ARCHIVE</h2>
+                    <p className="text-amber-400 text-xs font-mono">100+ PROJECTS • THE FULL UNIVERSE</p>
+                  </div>
                 </div>
                 <button 
                   onClick={() => setAntiHeroOpen(false)}
@@ -241,129 +247,29 @@ export default function EpicMagicCinematic() {
                 </button>
               </div>
 
-              <div className="p-8 text-center">
-                <p className="text-amber-400 text-sm font-mono tracking-widest mb-8">SM0K367 / DJ SMOKE STREAM — THE FULL UNIVERSE (100+ PROJECTS)</p>
+              <div className="p-8 overflow-y-auto max-h-[calc(90vh-120px)]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {links.map((link, index) => (
+                    <a 
+                      key={index}
+                      href={link.url} 
+                      target="_blank" 
+                      className="group block bg-zinc-900 border border-amber-400/30 rounded-3xl overflow-hidden hover:border-amber-400 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-400/30"
+                    >
+                      <div className="h-40 bg-gradient-to-br from-zinc-800 to-black flex items-center justify-center text-6xl">
+                        {link.emoji}
+                      </div>
+                      <div className="p-5">
+                        <div className="text-amber-400 text-xs font-mono">{link.category}</div>
+                        <div className="font-bold text-lg leading-tight">{link.title}</div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-12">
-                {/* Core Hubs */}
-                <a href="https://epic-tech-ai-lounge.vercel.app" target="_blank" className="group block bg-zinc-950 border border-amber-400/30 rounded-3xl overflow-hidden hover:border-amber-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-purple-900 to-cyan-900 flex items-center justify-center text-6xl">🌌</div>
-                  <div className="p-6">
-                    <div className="text-amber-400 text-xs font-mono mb-1">CORE HUB</div>
-                    <div className="font-bold text-xl">EPIC TECH AI LOUNGE</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The main lounge. The heart of the sprawl. Neon, beats, and the anti-hero's domain.</div>
-                  </div>
-                </a>
-
-                <a href="https://after-dark-five.vercel.app" target="_blank" className="group block bg-zinc-950 border border-amber-400/30 rounded-3xl overflow-hidden hover:border-amber-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-black to-purple-950 flex items-center justify-center text-6xl">🌃</div>
-                  <div className="p-6">
-                    <div className="text-amber-400 text-xs font-mono mb-1">AFTER DARK</div>
-                    <div className="font-bold text-xl">AFTER DARK V</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The late-night cyber lounge. Pure atmosphere and beats.</div>
-                  </div>
-                </a>
-
-                <a href="https://epictech.ai" target="_blank" className="group block bg-zinc-950 border border-amber-400/30 rounded-3xl overflow-hidden hover:border-amber-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-cyan-900 to-amber-900 flex items-center justify-center text-6xl">🚀</div>
-                  <div className="p-6">
-                    <div className="text-amber-400 text-xs font-mono mb-1">MAIN HUB</div>
-                    <div className="font-bold text-xl">EPIC TECH .AI</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The official hub. The core of the AI universe.</div>
-                  </div>
-                </a>
-
-                {/* Music Vault */}
-                <a href="https://suno.com/@dj_smoke_stream" target="_blank" className="group block bg-zinc-950 border border-purple-400/30 rounded-3xl overflow-hidden hover:border-purple-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-purple-950 to-black flex items-center justify-center text-6xl">🎵</div>
-                  <div className="p-6">
-                    <div className="text-purple-400 text-xs font-mono mb-1">MUSIC VAULT</div>
-                    <div className="font-bold text-xl">DJ SMOKE STREAM</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">Full 116-track album + constant Suno drops. The audio soul of the anti-hero.</div>
-                  </div>
-                </a>
-
-                <a href="https://music-vault-eta.vercel.app" target="_blank" className="group block bg-zinc-950 border border-purple-400/30 rounded-3xl overflow-hidden hover:border-purple-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-purple-900 to-black flex items-center justify-center text-6xl">📼</div>
-                  <div className="p-6">
-                    <div className="text-purple-400 text-xs font-mono mb-1">MUSIC VAULT</div>
-                    <div className="font-bold text-xl">MUSIC VAULT ETA</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The full archive. All the beats. All the drops.</div>
-                  </div>
-                </a>
-
-                {/* AI Agents */}
-                <a href="https://epic-ai-bot.vercel.app" target="_blank" className="group block bg-zinc-950 border border-cyan-400/30 rounded-3xl overflow-hidden hover:border-cyan-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-cyan-900 to-black flex items-center justify-center text-6xl">🤖</div>
-                  <div className="p-6">
-                    <div className="text-cyan-400 text-xs font-mono mb-1">AI AGENT</div>
-                    <div className="font-bold text-xl">EPIC AI BOT</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The main AI agent hub. The brain of the operation.</div>
-                  </div>
-                </a>
-
-                {/* GitHub */}
-                <a href="https://github.com/Sm0k367" target="_blank" className="group block bg-zinc-950 border border-white/30 rounded-3xl overflow-hidden hover:border-white transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-gray-900 to-black flex items-center justify-center text-6xl">🐙</div>
-                  <div className="p-6">
-                    <div className="text-white text-xs font-mono mb-1">FULL REPOS</div>
-                    <div className="font-bold text-xl">100+ REPOS</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The entire Sm0k367 universe. All the code, all the experiments.</div>
-                  </div>
-                </a>
-
-                {/* X / Twitter */}
-                <a href="https://x.com/Sm0ken42O" target="_blank" className="group block bg-zinc-950 border border-sky-400/30 rounded-3xl overflow-hidden hover:border-sky-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-sky-900 to-black flex items-center justify-center text-6xl">𝕏</div>
-                  <div className="p-6">
-                    <div className="text-sky-400 text-xs font-mono mb-1">THE ANTI-HERO</div>
-                    <div className="font-bold text-xl">@Sm0ken42O</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The main feed. The anti-hero's direct transmission.</div>
-                  </div>
-                </a>
-
-                {/* YouTube */}
-                <a href="https://youtube.com/@epictech-ai" target="_blank" className="group block bg-zinc-950 border border-red-400/30 rounded-3xl overflow-hidden hover:border-red-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-red-900 to-black flex items-center justify-center text-6xl">📺</div>
-                  <div className="p-6">
-                    <div className="text-red-400 text-xs font-mono mb-1">VIDEO VAULT</div>
-                    <div className="font-bold text-xl">@EPIC TECH AI</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The visual archive. All the vids and visuals.</div>
-                  </div>
-                </a>
-
-                {/* Websim & Pixio */}
-                <a href="https://websim.com/@EpicTechAI" target="_blank" className="group block bg-zinc-950 border border-violet-400/30 rounded-3xl overflow-hidden hover:border-violet-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-violet-900 to-black flex items-center justify-center text-6xl">🌐</div>
-                  <div className="p-6">
-                    <div className="text-violet-400 text-xs font-mono mb-1">WEBSIM</div>
-                    <div className="font-bold text-xl">@EpicTechAI</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The infinite web simulation hub.</div>
-                  </div>
-                </a>
-
-                <a href="https://beta.pixio.myapps.ai/showcase/creator/sm0ken42o" target="_blank" className="group block bg-zinc-950 border border-fuchsia-400/30 rounded-3xl overflow-hidden hover:border-fuchsia-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-fuchsia-900 to-black flex items-center justify-center text-6xl">🖼️</div>
-                  <div className="p-6">
-                    <div className="text-fuchsia-400 text-xs font-mono mb-1">PIXIO</div>
-                    <div className="font-bold text-xl">SM0KEN42O SHOWCASE</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">The visual art and generated imagery vault.</div>
-                  </div>
-                </a>
-
-                {/* Interactive Demos */}
-                <a href="https://sm0k367.github.io" target="_blank" className="group block bg-zinc-950 border border-emerald-400/30 rounded-3xl overflow-hidden hover:border-emerald-400 transition-all hover:scale-[1.02]">
-                  <div className="h-48 bg-gradient-to-br from-emerald-900 to-black flex items-center justify-center text-6xl">🌐</div>
-                  <div className="p-6">
-                    <div className="text-emerald-400 text-xs font-mono mb-1">INTERACTIVE DEMOS</div>
-                    <div className="font-bold text-xl">SM0K367.GITHUB.IO</div>
-                    <div className="text-white/60 text-sm mt-2 line-clamp-3">Neural Lounge, Lyric Visualizer, Vault, Game, High Stakes, and 10+ more WebGL/Three.js experiments.</div>
-                  </div>
-                </a>
-              </div>
-
-              <div className="text-center text-xs text-white/30 font-mono tracking-widest mt-8">
-                WITHOUT YOU, NONE OF THESE SHIPS WOULD SAIL • THE ANTI-HERO THANKS YOU 🚀
+                <div className="text-center text-xs text-white/30 font-mono tracking-widest mt-12">
+                  WITHOUT YOU, NONE OF THESE SHIPS WOULD SAIL • THE ANTI-HERO THANKS YOU 🚀
+                </div>
               </div>
             </div>
           </div>
@@ -373,15 +279,8 @@ export default function EpicMagicCinematic() {
       {/* Footer */}
       <div className="fixed bottom-0 left-0 right-0 h-11 bg-black/80 border-t border-white/10 flex items-center justify-center text-xs font-mono text-white/40 z-40 gap-8">
         <a href="/privacy" className="hover:text-amber-400 transition-colors">PRIVACY POLICY</a>
-        <span>© 2077 SM0K3VERSE STUDIOS • THE ANTI-HERO IS WATCHING</span>
+        <span>(c) 2077 SM0K3VERSE STUDIOS - THE ANTI-HERO IS WATCHING</span>
       </div>
     </div>
   );
-}
-
-function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-  if (e.key === 'Enter') {
-    // The sendMessage function is in the component scope
-    // This is a placeholder for the key handler
-  }
 }
