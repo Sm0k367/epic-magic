@@ -34,8 +34,16 @@ export default function EpicMagicCinematic() {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const videoRef = useRef<HTMLVideoElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    setMousePos({
+      x: (e.clientX / window.innerWidth - 0.5) * 35,
+      y: (e.clientY / window.innerHeight - 0.5) * 25,
+    });
+  };
 
   const playlist = [
     { title: "Cyberpunk Golden Hour Fly-Through", src: "/image.mp4" },
@@ -74,7 +82,7 @@ export default function EpicMagicCinematic() {
   };
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden font-sans">
+    <div className="relative min-h-screen bg-black text-white overflow-hidden font-sans" onMouseMove={handleMouseMove}>
       {/* Cyberpunk Background */}
       <div className="fixed inset-0 z-0 bg-[radial-gradient(#1a1428_1px,transparent_1px)] [background-size:40px_40px]" />
       <div className="fixed inset-0 z-0 bg-gradient-to-b from-amber-500/10 via-transparent to-black" />
@@ -99,21 +107,23 @@ export default function EpicMagicCinematic() {
       </div>
 
       <div className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        {/* DJ Smoke Stream */}
+        {/* DJ Smoke Stream - Real Image with Cinematic Lighting */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.6 }}
           className="mb-10 relative"
+          style={{ transform: `perspective(1000px) rotateX(${mousePos.y * -8}deg) rotateY(${mousePos.x * 12}deg)` }}
         >
-          <div className="w-72 h-96 mx-auto relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-900 to-black border-[14px] border-amber-400 rounded-3xl shadow-2xl overflow-hidden">
-              <div className="absolute top-12 left-1/2 -translate-x-1/2 w-44 h-52 bg-gradient-to-b from-amber-100 to-amber-700 rounded-t-3xl border-8 border-black flex items-center justify-center">
-                <div className="text-8xl scale-x-125 -mt-4">👁️</div>
-              </div>
-              <div className="absolute bottom-16 left-1/2 -translate-x-1/2 text-7xl">😏</div>
-            </div>
-            <div className="absolute -inset-12 bg-gradient-to-br from-amber-400/40 via-cyan-400/30 to-transparent blur-[90px] -z-10" />
+          <div className="w-80 h-[420px] mx-auto relative">
+            <img 
+              src="/dj-smoke-stream.jpg" 
+              alt="DJ Smoke Stream"
+              className="absolute inset-0 w-full h-full object-cover rounded-3xl border-[14px] border-amber-400 shadow-2xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-3xl" />
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-6xl drop-shadow-2xl">😏</div>
+            <div className="absolute -inset-8 bg-gradient-to-br from-amber-400/40 via-cyan-400/30 to-transparent blur-[100px] -z-10" />
           </div>
         </motion.div>
 
