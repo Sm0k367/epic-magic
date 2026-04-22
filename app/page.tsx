@@ -227,19 +227,22 @@ export default function EpicMagicCinematic() {
       <AnimatePresence>
         {antiHeroOpen && (
           <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={() => setAntiHeroOpen(false)}>
-            <div className="relative max-w-6xl w-full max-h-[90vh] overflow-auto" onClick={e => e.stopPropagation()}>
-              <button 
-                onClick={() => setAntiHeroOpen(false)}
-                className="absolute -top-12 right-4 text-white/70 hover:text-white flex items-center gap-2 text-sm z-10"
-              >
-                CLOSE <X size={18} />
-              </button>
-
-              <div className="text-center mb-8">
-                <div className="text-5xl mb-4">😏</div>
-                <h2 className="text-5xl font-black tracking-tighter neon-text">MEET THE ANTI-HERO</h2>
-                <p className="text-amber-400 text-sm font-mono tracking-widest mt-2">SM0K367 / DJ SMOKE STREAM — THE FULL UNIVERSE</p>
+            <div className="relative max-w-6xl w-full max-h-[90vh] overflow-auto bg-zinc-950 border border-amber-400/50 rounded-3xl" onClick={e => e.stopPropagation()}>
+              <div className="sticky top-0 bg-black/90 border-b border-amber-400/30 p-6 flex items-center justify-between z-10">
+                <div>
+                  <div className="text-5xl">😏</div>
+                  <h2 className="text-4xl font-black tracking-tighter neon-text">THE ANTI-HERO ARCHIVE</h2>
+                </div>
+                <button 
+                  onClick={() => setAntiHeroOpen(false)}
+                  className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white px-8 py-3 rounded-2xl text-sm font-medium transition-all"
+                >
+                  RETURN TO THE SPRAWL <X size={20} />
+                </button>
               </div>
+
+              <div className="p-8 text-center">
+                <p className="text-amber-400 text-sm font-mono tracking-widest mb-8">SM0K367 / DJ SMOKE STREAM — THE FULL UNIVERSE (100+ PROJECTS)</p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-12">
                 {/* Core Hubs */}
