@@ -46,6 +46,7 @@ export default function EpicMagicCinematic() {
   };
 
   const playlist = [
+    { title: "Anti-Hero Cinematic", src: "/antihero.mp4" },
     { title: "Epic Cinematic Experience", src: "/epic.mp4" },
     { title: "Your Uploaded Video", src: "/image.mp4" },
     { title: "420 Luxury Phonk Experience", src: "https://sm0ken42o-420-luxury-phonk-experience--epictechai.on.websim.com/" },
