@@ -26,6 +26,7 @@ const links = [
 
 export default function EpicMagicCinematic() {
   const [trailerOpen, setTrailerOpen] = useState(false);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [portalOpen, setPortalOpen] = useState(false);
   const [antiHeroOpen, setAntiHeroOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -35,6 +36,12 @@ export default function EpicMagicCinematic() {
   const [isLoading, setIsLoading] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  const playlist = [
+    { title: "Cyberpunk Golden Hour Fly-Through", src: "/image.mp4" },
+    { title: "420 Luxury Phonk Experience", src: "https://sm0ken42o-420-luxury-phonk-experience--epictechai.on.websim.com/" },
+    { title: "Neon Sprawl Transmission", src: "https://assets.mixkit.co/videos/preview/754/754-small.mp4" },
+  ];
 
   useEffect(() => {
     if (chatContainerRef.current) {
@@ -122,7 +129,10 @@ export default function EpicMagicCinematic() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
-            onClick={() => setTrailerOpen(true)}
+            onClick={() => {
+              setCurrentVideoIndex(0);
+              setTrailerOpen(true);
+            }}
             className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/30 hover:border-amber-400 px-12 py-6 rounded-3xl text-lg font-medium transition-all backdrop-blur-xl"
           >
             <Play className="w-5 h-5 text-amber-400 group-hover:scale-110 transition" />
@@ -151,7 +161,7 @@ export default function EpicMagicCinematic() {
         </div>
       </div>
 
-      {/* Trailer Modal */}
+      {/* Trailer Playlist Modal */}
       <AnimatePresence>
         {trailerOpen && (
           <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={() => setTrailerOpen(false)}>
@@ -159,13 +169,48 @@ export default function EpicMagicCinematic() {
               <button onClick={() => setTrailerOpen(false)} className="absolute -top-12 right-0 text-white/70 hover:text-white flex items-center gap-2 text-sm">
                 CLOSE <X size={18} />
               </button>
-              <div className="aspect-video bg-black rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
-                <video controls autoPlay className="w-full h-full" src="/image.mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div className="text-center text-xs text-white/40 mt-6 font-mono tracking-widest">
-                THE FIRST 15 SECONDS OF A FILM THAT HASN'T BEEN MADE YET
+
+              <div className="bg-zinc-950 border border-amber-400/30 rounded-3xl overflow-hidden">
+                <div className="p-6 border-b border-white/10 flex items-center justify-between">
+                  <div className="font-mono text-amber-400 text-sm tracking-widest">TRAILER PLAYLIST • CURATED BY THE ANTI-HERO</div>
+                  <div className="text-xs text-white/40"> {currentVideoIndex + 1} / {playlist.length} </div>
+                </div>
+
+                <div className="aspect-video bg-black">
+                  {playlist[currentVideoIndex].src.startsWith('http') ? (
+                    <iframe 
+                      src={playlist[currentVideoIndex].src} 
+                      className="w-full h-full"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <video 
+                      controls 
+                      autoPlay
+                      className="w-full h-full"
+                      src={playlist[currentVideoIndex].src}
+                    />
+                  )}
+                </div>
+
+                <div className="p-6 flex gap-4">
+                  <button 
+                    onClick={() => setCurrentVideoIndex((currentVideoIndex - 1 + playlist.length) % playlist.length)}
+                    className="flex-1 py-3 border border-white/30 rounded-2xl hover:bg-white/5 transition"
+                  >
+                    PREVIOUS
+                  </button>
+                  <button 
+                    onClick={() => setCurrentVideoIndex((currentVideoIndex + 1) % playlist.length)}
+                    className="flex-1 py-3 bg-amber-400 text-black rounded-2xl font-bold hover:bg-amber-300 transition"
+                  >
+                    NEXT VIDEO
+                  </button>
+                </div>
+
+                <div className="px-6 pb-6 text-center text-xs text-white/50 font-mono">
+                  {playlist[currentVideoIndex].title}
+                </div>
               </div>
             </div>
           </div>
