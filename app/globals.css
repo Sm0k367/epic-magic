@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  --font-space-grotesk: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+@theme inline {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  font-family: var(--font-space-grotesk);
+  background: #000000;
+  color: white;
+  overflow-x: hidden;
+}
+
+.neon-text {
+  text-shadow: 
+    0 0 20px #67e8f9,
+    0 0 40px #67e8f9,
+    0 0 80px #fbbf24;
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(24px);
+}
