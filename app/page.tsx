@@ -119,10 +119,8 @@ export default function EpicMagicCinematic() {
             <img 
               src="/dj-smoke-stream.jpg" 
               alt="DJ Smoke Stream"
-              className="absolute inset-0 w-full h-full object-cover rounded-3xl border-[14px] border-amber-400 shadow-2xl"
+              className="w-full h-full object-cover rounded-3xl border-[14px] border-amber-400 shadow-2xl"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-3xl" />
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-6xl drop-shadow-2xl">😏</div>
             <div className="absolute -inset-8 bg-gradient-to-br from-amber-400/40 via-cyan-400/30 to-transparent blur-[100px] -z-10" />
           </div>
         </motion.div>
