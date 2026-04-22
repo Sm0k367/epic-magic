@@ -129,10 +129,10 @@ export default function EpicMagicCinematic() {
           </motion.button>
 
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, rotate: 2 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => setAntiHeroOpen(true)}
-            className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/30 hover:border-white px-12 py-6 rounded-3xl text-lg font-medium transition-all backdrop-blur-xl neon-text"
+            className="group flex items-center gap-4 bg-gradient-to-r from-amber-400 to-yellow-400 text-black px-12 py-6 rounded-3xl text-lg font-bold tracking-tighter transition-all shadow-2xl shadow-amber-500/50 hover:shadow-amber-400 hover:scale-110 active:scale-95 neon-text"
           >
             MEET THE ANTI-HERO
             <User className="w-5 h-5" />
