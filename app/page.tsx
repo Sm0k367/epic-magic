@@ -90,6 +90,7 @@ const testimonials = [
 ];
 
   const playlist = [
+    { title: "Anti-Hero Cinematic", src: "/antihero.mp4" },
     { title: "Epic Cinematic Experience", src: "/epic.mp4" },
   ];
 
