@@ -194,9 +194,12 @@ export default function EpicMagicCinematic() {
           </div>
         </motion.div>
 
-        <h1 className="text-[92px] md:text-[128px] leading-none font-black tracking-[-6px] bg-clip-text text-transparent bg-gradient-to-b from-white via-amber-100 to-amber-400 mb-4 neon-text">
-          EPIC TECH AI
+        <h1 className="text-[92px] md:text-[128px] leading-none font-black tracking-[-6px] bg-clip-text text-transparent bg-gradient-to-b from-white via-amber-100 to-amber-400 mb-2 neon-text">
+          EPIC TECH AI • The Portal
         </h1>
+        <p className="text-xl md:text-2xl text-cyan-300 tracking-wide font-light mb-12 neon-text">
+          I build cinematic AI-powered web experiences that make people say "holy shit".
+        </p>
 
         <p className="text-2xl text-amber-100/80 max-w-md mx-auto mb-16 tracking-wide">
           The portal between the streets and the stars.
@@ -224,6 +227,16 @@ export default function EpicMagicCinematic() {
           >
             ENTER THE PORTAL
             <ArrowRight className="w-7 h-7 group-hover:translate-x-1 transition" />
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.12 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.location.href = "mailto:epictechai@gmail.com?subject=Hire%20The%20Anti-Hero%20-%20Project%20from%202077"}
+            className="group relative px-10 py-6 text-xl font-bold tracking-widest border-2 border-pink-500 text-pink-400 shadow-[0_0_20px_#ff00aa,0_0_40px_#ff00aa,0_0_60px_#ff00aa] hover:bg-pink-500 hover:text-black hover:border-pink-500 transition-all duration-300 rounded-xl flex items-center gap-3 before:absolute before:inset-0 before:bg-pink-500/20 before:animate-pulse"
+          >
+            HIRE THE ANTI-HERO
+            <span className="text-2xl group-hover:rotate-45 transition-transform">⚡</span>
           </motion.button>
 
           <motion.button
