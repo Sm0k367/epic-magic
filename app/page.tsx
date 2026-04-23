@@ -458,19 +458,24 @@ export default function EpicMagicCinematic() {
             >
               <div className="sticky top-0 bg-black p-6 border-b border-amber-400/30 flex items-center justify-between z-10">
                 <div className="flex items-center gap-4">
-                  <div className="text-5xl">😏</div>
+                  <img 
+                    src="/dj-smoke-stream.jpg" 
+                    alt="DJ Smoke Stream"
+                    className="w-16 h-16 object-top rounded-2xl border-2 border-amber-400 shadow-lg"
+                  />
                   <div>
                     <h2 className="text-4xl font-black tracking-tighter neon-text">THE ANTI-HERO ARCHIVE</h2>
                     <p className="text-amber-400 text-xs font-mono">100+ PROJECTS • THE FULL UNIVERSE</p>
                   </div>
                 </div>
-                <button
+                <button 
                   onClick={() => setAntiHeroOpen(false)}
                   className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white px-8 py-3 rounded-2xl text-sm font-medium transition-all"
                 >
                   RETURN TO THE SPRAWL <X size={20} />
                 </button>
               </div>
+
 
               <div className="p-8 overflow-y-auto max-h-[calc(90vh-120px)]">
 
