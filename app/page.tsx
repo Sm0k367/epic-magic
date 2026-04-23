@@ -176,7 +176,7 @@ export default function EpicMagicCinematic() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6 text-center pt-14">
+      <div className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6 text-center pt-14 pb-24">
         {/* DJ Smoke Stream Anti-Hero Image - NO OVERLAY */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
