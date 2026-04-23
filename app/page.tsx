@@ -89,12 +89,10 @@ const testimonials = [
   { quote: "The anti-hero is the only dev who understood my vision completely.", author: "Creative Director" },
 ];
 
-const playlist = [
-  { title: "Epic Cinematic Experience", src: "/epic.mp4" },
-  { title: "Anti-Hero Cinematic", src: "/antihero.mp4" },
-  { title: "Your Uploaded Video", src: "/image.mp4" },
-  { title: "420 Luxury Phonk Experience", src: "https://sm0ken42o-420-luxury-phonk-experience--epictechai.on.websim.com/" },
-];
+  const playlist = [
+    { title: "Epic Cinematic Experience", src: "/epic.mp4" },
+  ];
+
 
 export default function EpicMagicCinematic() {
   const [trailerOpen, setTrailerOpen] = useState(false);
